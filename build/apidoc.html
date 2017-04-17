@@ -1,0 +1,903 @@
+<div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a
+
+        href="https://github.com/fabienb4/meteor-jsdoc"
+
+    >meteor-jsdoc (v1.0.4)</a>
+</h1>
+<h4>Automated JSDoc generation for Meteor projects with a Meteor server to output the docs.</h4>
+<div class="apidocSectionDiv"><a
+    href="#apidoc.tableOfContents"
+    id="apidoc.tableOfContents"
+><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.meteor-jsdoc">module meteor-jsdoc</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.meteor-jsdoc.actions">
+            function <span class="apidocSignatureSpan">meteor-jsdoc.</span>actions
+            <span class="apidocSignatureSpan">(config, cwd)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">meteor-jsdoc.</span>actions.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">meteor-jsdoc.</span>config</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">meteor-jsdoc.</span>helpers</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.meteor-jsdoc.actions">module meteor-jsdoc.actions</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.meteor-jsdoc.actions.actions">
+            function <span class="apidocSignatureSpan">meteor-jsdoc.</span>actions
+            <span class="apidocSignatureSpan">(config, cwd)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.meteor-jsdoc.actions.init">
+            function <span class="apidocSignatureSpan">meteor-jsdoc.actions.</span>init
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.meteor-jsdoc.actions.prototype">module meteor-jsdoc.actions.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.meteor-jsdoc.actions.prototype._applyTemplate">
+            function <span class="apidocSignatureSpan">meteor-jsdoc.actions.prototype.</span>_applyTemplate
+            <span class="apidocSignatureSpan">(file, vars, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.meteor-jsdoc.actions.prototype.build">
+            function <span class="apidocSignatureSpan">meteor-jsdoc.actions.prototype.</span>build
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.meteor-jsdoc.actions.prototype.conf">
+            function <span class="apidocSignatureSpan">meteor-jsdoc.actions.prototype.</span>conf
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.meteor-jsdoc.actions.prototype.start">
+            function <span class="apidocSignatureSpan">meteor-jsdoc.actions.prototype.</span>start
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.meteor-jsdoc.actions.prototype.stop">
+            function <span class="apidocSignatureSpan">meteor-jsdoc.actions.prototype.</span>stop
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.meteor-jsdoc.config">module meteor-jsdoc.config</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.meteor-jsdoc.config.read">
+            function <span class="apidocSignatureSpan">meteor-jsdoc.config.</span>read
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.meteor-jsdoc.helpers">module meteor-jsdoc.helpers</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.meteor-jsdoc.helpers.debug">
+            function <span class="apidocSignatureSpan">meteor-jsdoc.helpers.</span>debug
+            <span class="apidocSignatureSpan">(log, variable, raw)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.meteor-jsdoc.helpers.error">
+            function <span class="apidocSignatureSpan">meteor-jsdoc.helpers.</span>error
+            <span class="apidocSignatureSpan">(log, variable)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.meteor-jsdoc.helpers.info">
+            function <span class="apidocSignatureSpan">meteor-jsdoc.helpers.</span>info
+            <span class="apidocSignatureSpan">(log, variable)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.meteor-jsdoc.helpers.log">
+            function <span class="apidocSignatureSpan">meteor-jsdoc.helpers.</span>log
+            <span class="apidocSignatureSpan">(log, variable)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.meteor-jsdoc.helpers.printHelp">
+            function <span class="apidocSignatureSpan">meteor-jsdoc.helpers.</span>printHelp
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.meteor-jsdoc.helpers.success">
+            function <span class="apidocSignatureSpan">meteor-jsdoc.helpers.</span>success
+            <span class="apidocSignatureSpan">(log, variable)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.meteor-jsdoc.helpers.warn">
+            function <span class="apidocSignatureSpan">meteor-jsdoc.helpers.</span>warn
+            <span class="apidocSignatureSpan">(log, variable)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.meteor-jsdoc" id="apidoc.module.meteor-jsdoc">module meteor-jsdoc</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.meteor-jsdoc.actions" id="apidoc.element.meteor-jsdoc.actions">
+        function <span class="apidocSignatureSpan">meteor-jsdoc.</span>actions
+        <span class="apidocSignatureSpan">(config, cwd)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Actions(config, cwd) {
+  this.cwd    = cwd;
+  this.config = config;
+
+  helpers.debug(&#x22;DEBUG: config =&#x22;, config);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.meteor-jsdoc.actions" id="apidoc.module.meteor-jsdoc.actions">module meteor-jsdoc.actions</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.meteor-jsdoc.actions.actions" id="apidoc.element.meteor-jsdoc.actions.actions">
+        function <span class="apidocSignatureSpan">meteor-jsdoc.</span>actions
+        <span class="apidocSignatureSpan">(config, cwd)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Actions(config, cwd) {
+  this.cwd    = cwd;
+  this.config = config;
+
+  helpers.debug(&#x22;DEBUG: config =&#x22;, config);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.meteor-jsdoc.actions.init" id="apidoc.element.meteor-jsdoc.actions.init">
+        function <span class="apidocSignatureSpan">meteor-jsdoc.actions.</span>init
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">init = function () {
+  var jsdocJson     = path.resolve(&#x22;jsdoc.json&#x22;);
+  var jsdocConfJson = path.resolve(&#x22;jsdoc-conf.json&#x22;);
+
+  if (fse.existsSync(jsdocJson)) {
+    helpers.error(&#x22;A JSDoc project already exists&#x22;);
+    process.exit(1);
+  }
+
+  var jsdocJsonExample     = path.resolve(__dirname, &#x22;..&#x22;, &#x22;example&#x22;, &#x22;jsdoc.json&#x22;);
+  var jsdocConfJsonExample = path.resolve(__dirname, &#x22;..&#x22;, &#x22;example&#x22;, &#x22;jsdoc-conf.json&#x22;);
+
+  fse.copySync(jsdocJsonExample, jsdocJson);
+  fse.copySync(jsdocConfJsonExample, jsdocConfJson);
+
+  helpers.success(&#x22;JSDoc project initialized.&#x22;);
+  helpers.info(`Check &#x22;${jsdocJson}&#x22; for project specific options.`)
+  helpers.info(`[Advanced] Check &#x22;${jsdocConfJson}&#x22; for jsdoc options.`);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.meteor-jsdoc.actions.prototype" id="apidoc.module.meteor-jsdoc.actions.prototype">module meteor-jsdoc.actions.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.meteor-jsdoc.actions.prototype._applyTemplate" id="apidoc.element.meteor-jsdoc.actions.prototype._applyTemplate">
+        function <span class="apidocSignatureSpan">meteor-jsdoc.actions.prototype.</span>_applyTemplate
+        <span class="apidocSignatureSpan">(file, vars, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_applyTemplate = function (file, vars, callback) {
+  var self = this;
+
+  fse.readFile(file, { encoding: &#x22;utf8&#x22; }, (err, content) =&#x3e; {
+    if (err) {
+      callback(err);
+    } else {
+      if (vars) {
+        content = ejs.compile(content, {})(vars);
+      }
+
+      callback(null, content);
+    }
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  helpers.success(&#x22;Meteor updated.&#x22;);
+}
+
+if (self.config.docsConfig) {
+  var srcHead  = path.resolve(METEOR_DIR, &#x22;client&#x22;, &#x22;templates&#x22;, &#x22;layout.html&#x22;);
+  var destHead = path.resolve(self.config.docsPath, &#x22;client&#x22;, &#x22;templates&#x22;, &#x22;layout.html&#x22;);
+
+  self.<span class="apidocCodeKeywordSpan">_applyTemplate</span>(srcHead, self.config.docsConfig, (err, content) =&#x3e; {
+    if (err) {
+      helpers.error(err);
+    } else {
+      fse.writeFileSync(destHead, content);
+    }
+  });
+}
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.meteor-jsdoc.actions.prototype.build" id="apidoc.element.meteor-jsdoc.actions.prototype.build">
+        function <span class="apidocSignatureSpan">meteor-jsdoc.actions.prototype.</span>build
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">build = function () {
+  var self = this;
+
+  try {
+    fse.mkdirsSync(self.config.docsPath);
+  } catch(e) {
+    if (e.code != &#x22;EEXIST&#x22;) {
+      helpers.error(&#x22;Cannot create docs folder (&#x27;docsPath&#x27;):&#x22;, e);
+
+      process.exit(1);
+    }
+  }
+
+  if (self.config.initMeteor) {
+    var src = path.join(METEOR_DIR);
+    var dest = path.join(self.config.docsPath);
+
+    fse.copySync(src, dest);
+
+    helpers.success(&#x22;Meteor initialized.&#x22;);
+  } else if (self.config.updateMeteor) {
+    var src = path.join(METEOR_DIR, &#x22;.meteor&#x22;);
+    var dest = path.join(self.config.docsPath, &#x22;.meteor&#x22;);
+
+    fse.copySync(src, dest);
+
+    helpers.success(&#x22;Meteor updated.&#x22;);
+  }
+
+  if (self.config.docsConfig) {
+    var srcHead  = path.resolve(METEOR_DIR, &#x22;client&#x22;, &#x22;templates&#x22;, &#x22;layout.html&#x22;);
+    var destHead = path.resolve(self.config.docsPath, &#x22;client&#x22;, &#x22;templates&#x22;, &#x22;layout.html&#x22;);
+
+    self._applyTemplate(srcHead, self.config.docsConfig, (err, content) =&#x3e; {
+      if (err) {
+        helpers.error(err);
+      } else {
+        fse.writeFileSync(destHead, content);
+      }
+    });
+  }
+
+  // XXX: Test if deep folder exist to make sure Meteor is copied.
+  var destClientTemplates = path.resolve(self.config.docsPath, &#x22;client&#x22;, &#x22;templates&#x22;);
+
+  if (! fse.existsSync(destClientTemplates)) {
+    helpers.error(&#x22;Meteor doesn&#x27;t appear to be initialized. Please set &#x27;initMeteor&#x27; to true in &#x27;jsdoc.conf&#x27;.&#x22;);
+    process.exit(1);
+  }
+
+  if (self.config.preamble) {
+    var fileName     = &#x22;preamble.md&#x22;;
+    var srcPreamble  = path.resolve(EXAMPLE_DIR, fileName);
+    var destPreamble = path.resolve(self.config.docsPath, &#x22;client&#x22;, &#x22;templates&#x22;, fileName);
+
+    if (fse.existsSync(destPreamble)) {
+      var log = `Skipped ${fileName} copy to avoid overwritting.`;
+
+      helpers.warn(log);
+    } else {
+      fse.copySync(srcPreamble, destPreamble);
+    }
+  }
+
+  fse.mkdirsSync(path.join(self.config.docsPath, &#x22;client&#x22;, &#x22;data&#x22;));
+
+  process.env.DOCS_PATH    = self.config.docsPath;
+  process.env.PROJECT_REPO = self.config.projectRepo;
+
+  var nodePath      = os.platform() === &#x22;win32&#x22; ? &#x22;&#x22; : `&#x22;${self.config.nodePath}&#x22;`;
+  var jsdocPath     = `&#x22;${path.resolve(__dirname, &#x22;..&#x22;, &#x22;node_modules&#x22;, &#x22;.bin&#x22;, &#x22;jsdoc&#x22;)}&#x22;`;
+  var jsdocArgs     = self.config.debug ? &#x22;--debug&#x22; : &#x22;--verbose&#x22;;
+  var jsdocTmplPath = `&#x22;${path.resolve(__dirname, &#x22;..&#x22;, &#x22;template&#x22;)}&#x22;`;
+  var jsdocConf     = `&#x22;${path.resolve(&#x22;jsdoc-conf.json&#x22;)}&#x22;`;
+  var docsPath      = `&#x22;${self.config.docsPath}&#x22;`;
+
+  var cmd = `find . -type f ! -path &#x22;*/.git/*&#x22; ! -path &#x22;*/.meteor/*&#x22; | xargs grep -lswH &#x22;@summary&#x22; | xargs -L 10000 -t ${nodePath
+} ${jsdocPath} ${jsdocArgs} -t ${jsdocTmplPath} -c ${jsdocConf} -d ${docsPath} 2&#x3e;&#x26;1`;
+
+  exec(cmd, (error, stdout, stderr) =&#x3e; {
+    if (stderr) {
+      helpers.error(stderr);
+
+      return;
+    }
+
+    var logs = stdout.split(&#x22;\n&#x22;);
+
+    // Show cmd ran when in debug mode
+    helpers.debug(&#x22;DEBUG:&#x22;, logs[0]);
+
+    each(drop(logs), (log) =&#x3e; {
+      if (log.startsWith(&#x22;DEBUG&#x22;)) {
+        helpers.debug(log);
+      } else if (log.startsWith(&#x22;WARNING&#x22;)) {
+        helpers.warn(log);
+      } else if (log.startsWith(&#x22;ERROR&#x22;)) {
+        helpers.error(log);
+      } else {
+        helpers.info(log);
+      }
+    });
+
+    if (error !== null) {
+      helpers.warn(&#x22;Docs built with errors.&#x22;);
+    } else {
+      helpers.success(&#x22;Docs successfully built.&#x22;);
+    }
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.meteor-jsdoc.actions.prototype.conf" id="apidoc.element.meteor-jsdoc.actions.prototype.conf">
+        function <span class="apidocSignatureSpan">meteor-jsdoc.actions.prototype.</span>conf
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">conf = function () {
+  var self = this;
+
+  helpers.info(&#x22;Project&#x27;s config:&#x22;, self.config);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.meteor-jsdoc.actions.prototype.start" id="apidoc.element.meteor-jsdoc.actions.prototype.start">
+        function <span class="apidocSignatureSpan">meteor-jsdoc.actions.prototype.</span>start
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">start = function () {
+  var self = this;
+  var cmd  = `meteor --port ${self.config.meteorPort} &#x3e; app.log 2&#x3e;&#x26;1 &#x26;`;
+
+  exec(cmd, { cwd: self.config.docsPath }, (error, stdout, stderr) =&#x3e; {
+    if (error !== null) {
+      helpers.error(error);
+    } else {
+      helpers.success(`Meteor docs server starting at http://localhost:${self.config.meteorPort}/`);
+    }
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.meteor-jsdoc.actions.prototype.stop" id="apidoc.element.meteor-jsdoc.actions.prototype.stop">
+        function <span class="apidocSignatureSpan">meteor-jsdoc.actions.prototype.</span>stop
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">stop = function () {
+  var self         = this;
+  var meteorPidCmd = `ps ax | grep meteor | grep &#x27;index.js --port ${self.config.meteorPort}&#x27; | awk &#x27;{print $1}&#x27;`;
+  var mongoPidCmd  = `ps ax | grep mongod | grep &#x27;dbpath ${self.config.docsPath}&#x27; | awk &#x27;{print $1}&#x27;`;
+
+  var killPid = function(pid) {
+    exec(`kill -9 ${pid}`, (error, stdout, stderr) =&#x3e; {
+      if (error === null) {
+        helpers.success(`Stopped PID: ${pid}.`);
+      }
+    });
+  }
+
+  each([meteorPidCmd, mongoPidCmd], (cmd) =&#x3e; {
+    exec(cmd, (error, stdout, stderr) =&#x3e; {
+      if (error !== null) {
+        helpers.error(error);
+      } else {
+        pids = pull(stdout.split(&#x22;\n&#x22;), &#x22;&#x22;);
+
+        if (pids.length === 2) {
+          pid = pids[0];
+          killPid(pid);
+        }
+      }
+    });
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.meteor-jsdoc.config" id="apidoc.module.meteor-jsdoc.config">module meteor-jsdoc.config</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.meteor-jsdoc.config.read" id="apidoc.element.meteor-jsdoc.config.read">
+        function <span class="apidocSignatureSpan">meteor-jsdoc.config.</span>read
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">read = function () {
+  var jsdocJsonPath = path.resolve(&#x22;jsdoc.json&#x22;);
+
+  if (fse.existsSync(jsdocJsonPath)) {
+    var jsdocJson = cjson.load(jsdocJsonPath);
+
+    if (typeof jsdocJson.debug === &#x22;undefined&#x22; || ! isBoolean(jsdocJson.debug)) {
+      jsdocJson.debug = false;
+    }
+
+    if (typeof jsdocJson.meteorPort === &#x22;undefined&#x22; || ! isNumber(jsdocJson.meteorPort)) {
+      jsdocJson.meteorPort = 3333;
+    }
+
+    if (typeof jsdocJson.nodePath === &#x22;undefined&#x22; || isEmpty(jsdocJson.nodePath)) {
+      jsdocJson.nodePath = process.execPath;
+    }
+
+    if (typeof jsdocJson.docsPath === &#x22;undefined&#x22; || isEmpty(jsdocJson.docsPath)) {
+      helpers.error(&#x22;Invalid jsdoc.json file: docsPath is not specified.&#x22;);
+      process.exit(1);
+    }
+
+    var fullDocsPath   = jsdocJson.docsPath.replace(&#x22;~&#x22;, os.homedir());
+    jsdocJson.docsPath = path.resolve(fullDocsPath);
+
+    if (typeof jsdocJson.initMeteor === &#x22;undefined&#x22; || ! isBoolean(jsdocJson.initMeteor)) {
+      jsdocJson.initMeteor = true;
+    }
+
+    if (typeof jsdocJson.updateMeteor === &#x22;undefined&#x22; || ! isBoolean(jsdocJson.updateMeteor)) {
+      jsdocJson.updateMeteor = true;
+    }
+
+    if (typeof jsdocJson.preamble === &#x22;undefined&#x22; || ! isBoolean(jsdocJson.preamble)) {
+      jsdocJson.preamble = true;
+    }
+
+    if (typeof jsdocJson.projectRepo === &#x22;undefined&#x22; || ! isString(jsdocJson.projectRepo)) {
+      jsdocJson.projectRepo = &#x22;&#x22;;
+    }
+
+    if (typeof jsdocJson.docsConfig === &#x22;undefined&#x22; || isEmpty(jsdocJson.docsConfig)) {
+      jsdocJson.docsConfig = {
+        &#x22;title&#x22;: &#x22;Meteor Project Docs&#x22;,
+        &#x22;metas&#x22;: {
+          &#x22;description&#x22;: &#x22;Documentation for a meteor project.&#x22;
+        }
+      };
+    }
+
+    return jsdocJson;
+  } else {
+    helpers.error(&#x22;jsdoc.json file does not exist!&#x22;);
+    helpers.printHelp();
+    process.exit(1);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  console.log(&#x22;init  - Copy the config file to your project&#x27;s directory.&#x22;);
+  console.log(&#x22;build - Build/rebuild the documentation for a Meteor project&#x22;);
+  console.log(&#x22;start - Start the meteor server for the docs&#x22;);
+  console.log(&#x22;stop  - Stop the meteor server for the docs\n&#x22;);
+};
+
+exports.debug = function(log, variable, raw) {
+  if (config.<span class="apidocCodeKeywordSpan">read</span>().debug) {
+    console.log(stringify(log).gray, raw ? variable.gray : stringify(variable).gray);
+  }
+};
+
+exports.log = function(log, variable) {
+  console.log(stringify(log).blue.bold, stringify(variable).blue.bold);
+};
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.meteor-jsdoc.helpers" id="apidoc.module.meteor-jsdoc.helpers">module meteor-jsdoc.helpers</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.meteor-jsdoc.helpers.debug" id="apidoc.element.meteor-jsdoc.helpers.debug">
+        function <span class="apidocSignatureSpan">meteor-jsdoc.helpers.</span>debug
+        <span class="apidocSignatureSpan">(log, variable, raw)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">debug = function (log, variable, raw) {
+  if (config.read().debug) {
+    console.log(stringify(log).gray, raw ? variable.gray : stringify(variable).gray);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+const EXAMPLE_DIR = path.resolve(__dirname, &#x22;..&#x22;, &#x22;example&#x22;);
+const METEOR_DIR  = path.resolve(EXAMPLE_DIR, &#x22;meteor&#x22;);
+
+function Actions(config, cwd) {
+this.cwd    = cwd;
+this.config = config;
+
+helpers.<span class="apidocCodeKeywordSpan">debug</span>(&#x22;DEBUG: config =&#x22;, config);
+}
+
+Actions.prototype._applyTemplate = function(file, vars, callback) {
+var self = this;
+
+fse.readFile(file, { encoding: &#x22;utf8&#x22; }, (err, content) =&#x3e; {
+  if (err) {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.meteor-jsdoc.helpers.error" id="apidoc.element.meteor-jsdoc.helpers.error">
+        function <span class="apidocSignatureSpan">meteor-jsdoc.helpers.</span>error
+        <span class="apidocSignatureSpan">(log, variable)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">error = function (log, variable) {
+  console.log(stringify(log).red.bold, stringify(variable).red.bold);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+Actions.prototype.build = function() {
+var self = this;
+
+try {
+  fse.mkdirsSync(self.config.docsPath);
+} catch(e) {
+  if (e.code != &#x22;EEXIST&#x22;) {
+    helpers.<span class="apidocCodeKeywordSpan">error</span>(&#x22;Cannot create docs folder (&#x27;docsPath&#x27;):&#x22;, e);
+
+    process.exit(1);
+  }
+}
+
+if (self.config.initMeteor) {
+  var src = path.join(METEOR_DIR);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.meteor-jsdoc.helpers.info" id="apidoc.element.meteor-jsdoc.helpers.info">
+        function <span class="apidocSignatureSpan">meteor-jsdoc.helpers.</span>info
+        <span class="apidocSignatureSpan">(log, variable)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">info = function (log, variable) {
+  console.log(stringify(log).gray.bold, stringify(variable).gray.bold);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  }
+});
+};
+
+Actions.prototype.conf = function() {
+var self = this;
+
+helpers.<span class="apidocCodeKeywordSpan">info</span>(&#x22;Project&#x27;s config:&#x22;, self.config);
+};
+
+Actions.prototype.build = function() {
+var self = this;
+
+try {
+  fse.mkdirsSync(self.config.docsPath);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.meteor-jsdoc.helpers.log" id="apidoc.element.meteor-jsdoc.helpers.log">
+        function <span class="apidocSignatureSpan">meteor-jsdoc.helpers.</span>log
+        <span class="apidocSignatureSpan">(log, variable)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">log = function (log, variable) {
+  console.log(stringify(log).blue.bold, stringify(variable).blue.bold);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+require(&#x22;colors&#x22;);
+
+var stringify = function(variable) {
+return variable ? JSON.stringify(variable, null, 2) : &#x22;&#x22;;
+}
+
+exports.printHelp = function() {
+console.<span class="apidocCodeKeywordSpan">log</span>(`\nmeteor-jsdoc (v${require(&#x22;../package.json&#x22;).version})`);
+console.log(&#x22;\n---------------&#x22;);
+console.log(&#x22; Valid Actions &#x22;);
+console.log(&#x22;---------------&#x22;);
+console.log(&#x22;conf  - Show the config for the project.&#x22;);
+console.log(&#x22;init  - Copy the config file to your project&#x27;s directory.&#x22;);
+console.log(&#x22;build - Build/rebuild the documentation for a Meteor project&#x22;);
+console.log(&#x22;start - Start the meteor server for the docs&#x22;);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.meteor-jsdoc.helpers.printHelp" id="apidoc.element.meteor-jsdoc.helpers.printHelp">
+        function <span class="apidocSignatureSpan">meteor-jsdoc.helpers.</span>printHelp
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">printHelp = function () {
+  console.log(`\nmeteor-jsdoc (v${require(&#x22;../package.json&#x22;).version})`);
+  console.log(&#x22;\n---------------&#x22;);
+  console.log(&#x22; Valid Actions &#x22;);
+  console.log(&#x22;---------------&#x22;);
+  console.log(&#x22;conf  - Show the config for the project.&#x22;);
+  console.log(&#x22;init  - Copy the config file to your project&#x27;s directory.&#x22;);
+  console.log(&#x22;build - Build/rebuild the documentation for a Meteor project&#x22;);
+  console.log(&#x22;start - Start the meteor server for the docs&#x22;);
+  console.log(&#x22;stop  - Stop the meteor server for the docs\n&#x22;);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+        }
+      };
+    }
+
+    return jsdocJson;
+  } else {
+    helpers.error(&#x22;jsdoc.json file does not exist!&#x22;);
+    helpers.<span class="apidocCodeKeywordSpan">printHelp</span>();
+    process.exit(1);
+  }
+};
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.meteor-jsdoc.helpers.success" id="apidoc.element.meteor-jsdoc.helpers.success">
+        function <span class="apidocSignatureSpan">meteor-jsdoc.helpers.</span>success
+        <span class="apidocSignatureSpan">(log, variable)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">success = function (log, variable) {
+  console.log(stringify(log).green.bold, stringify(variable).green.bold);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+  if (self.config.initMeteor) {
+var src = path.join(METEOR_DIR);
+var dest = path.join(self.config.docsPath);
+
+fse.copySync(src, dest);
+
+helpers.<span class="apidocCodeKeywordSpan">success</span>(&#x22;Meteor initialized.&#x22;);
+  } else if (self.config.updateMeteor) {
+var src = path.join(METEOR_DIR, &#x22;.meteor&#x22;);
+var dest = path.join(self.config.docsPath, &#x22;.meteor&#x22;);
+
+fse.copySync(src, dest);
+
+helpers.success(&#x22;Meteor updated.&#x22;);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.meteor-jsdoc.helpers.warn" id="apidoc.element.meteor-jsdoc.helpers.warn">
+        function <span class="apidocSignatureSpan">meteor-jsdoc.helpers.</span>warn
+        <span class="apidocSignatureSpan">(log, variable)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">warn = function (log, variable) {
+  console.log(stringify(log).yellow.bold, stringify(variable).yellow.bold);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  var fileName     = &#x22;preamble.md&#x22;;
+  var srcPreamble  = path.resolve(EXAMPLE_DIR, fileName);
+  var destPreamble = path.resolve(self.config.docsPath, &#x22;client&#x22;, &#x22;templates&#x22;, fileName);
+
+  if (fse.existsSync(destPreamble)) {
+    var log = `Skipped ${fileName} copy to avoid overwritting.`;
+
+    helpers.<span class="apidocCodeKeywordSpan">warn</span>(log);
+  } else {
+    fse.copySync(srcPreamble, destPreamble);
+  }
+}
+
+fse.mkdirsSync(path.join(self.config.docsPath, &#x22;client&#x22;, &#x22;data&#x22;));
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
