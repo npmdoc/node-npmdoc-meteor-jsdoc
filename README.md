@@ -1,4 +1,7 @@
-# api documentation for  [meteor-jsdoc (v1.0.4)](https://github.com/fabienb4/meteor-jsdoc)  [![npm package](https://img.shields.io/npm/v/npmdoc-meteor-jsdoc.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-meteor-jsdoc) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-meteor-jsdoc.svg)](https://travis-ci.org/npmdoc/node-npmdoc-meteor-jsdoc)
+# npmdoc-meteor-jsdoc
+
+#### basic api documentation for  [meteor-jsdoc (v1.0.4)](https://github.com/fabienb4/meteor-jsdoc)  [![npm package](https://img.shields.io/npm/v/npmdoc-meteor-jsdoc.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-meteor-jsdoc) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-meteor-jsdoc.svg)](https://travis-ci.org/npmdoc/node-npmdoc-meteor-jsdoc)
+
 #### Automated JSDoc generation for Meteor projects with a Meteor server to output the docs.
 
 [![NPM](https://nodei.co/npm/meteor-jsdoc.png?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/meteor-jsdoc)
