@@ -313,7 +313,23 @@
   helpers.info(`Check "${jsdocJson}" for project specific options.`)
   helpers.info(`[Advanced] Check "${jsdocConfJson}" for jsdoc options.`);
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+var invalidAction = function(action) {
+helpers.error(`Invalid action: ${action}`);
+helpers.printHelp();
+}
+
+if (action == "init") {
+// Special setup for init
+ActionsRegistry.<span class="apidocCodeKeywordSpan">init</span>();
+} else {
+var cwd             = path.resolve(".");
+// Read config and validate it
+var config          = Config.read();
+var actionsRegistry = new ActionsRegistry(config, cwd);
+
+if (actionsRegistry[action]) {
+...</pre></li>
     </ul>
 
 
@@ -640,21 +656,21 @@ if (self.config.docsConfig) {
   }
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
-  console.log("init  - Copy the config file to your project's directory.");
-  console.log("build - Build/rebuild the documentation for a Meteor project");
-  console.log("start - Start the meteor server for the docs");
-  console.log("stop  - Stop the meteor server for the docs\n");
-};
 
-exports.debug = function(log, variable, raw) {
-  if (config.<span class="apidocCodeKeywordSpan">read</span>().debug) {
-    console.log(stringify(log).gray, raw ? variable.gray : stringify(variable).gray);
-  }
-};
+if (action == "init") {
+// Special setup for init
+ActionsRegistry.init();
+} else {
+var cwd             = path.resolve(".");
+// Read config and validate it
+var config          = Config.<span class="apidocCodeKeywordSpan">read</span>();
+var actionsRegistry = new ActionsRegistry(config, cwd);
 
-exports.log = function(log, variable) {
-  console.log(stringify(log).blue.bold, stringify(variable).blue.bold);
-};
+if (actionsRegistry[action]) {
+  try {
+    actionsRegistry[action]();
+  } catch (e) {
+    invalidAction(action);
 ...</pre></li>
     </ul>
 
@@ -709,21 +725,21 @@ fse.readFile(file, { encoding: "utf8" }, (err, content) =&gt; {
   console.log(stringify(log).red.bold, stringify(variable).red.bold);
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
-Actions.prototype.build = function() {
-var self = this;
 
-try {
-  fse.mkdirsSync(self.config.docsPath);
-} catch(e) {
-  if (e.code != "EEXIST") {
-    helpers.<span class="apidocCodeKeywordSpan">error</span>("Cannot create docs folder ('docsPath'):", e);
+helpers.log("\rmeteor-jsdoc: Automated JSDoc generation for Meteor projects");
+helpers.log("-------------------------------------------------------------\n");
 
-    process.exit(1);
-  }
+var action = process.argv[2];
+
+var invalidAction = function(action) {
+  helpers.<span class="apidocCodeKeywordSpan">error</span>(`Invalid action: ${action}`);
+  helpers.printHelp();
 }
 
-if (self.config.initMeteor) {
-  var src = path.join(METEOR_DIR);
+if (action == "init") {
+  // Special setup for init
+  ActionsRegistry.init();
+} else {
 ...</pre></li>
     </ul>
 
@@ -771,21 +787,22 @@ try {
   console.log(stringify(log).blue.bold, stringify(variable).blue.bold);
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
-require("colors");
 
-var stringify = function(variable) {
-return variable ? JSON.stringify(variable, null, 2) : "";
-}
+const path            = require("path");
+const cjson           = require("cjson");
+const Config          = require("../lib/config");
+const ActionsRegistry = require("../lib/actions");
+const helpers         = require("../lib/helpers");
 
-exports.printHelp = function() {
-console.<span class="apidocCodeKeywordSpan">log</span>(`\nmeteor-jsdoc (v${require("../package.json").version})`);
-console.log("\n---------------");
-console.log(" Valid Actions ");
-console.log("---------------");
-console.log("conf  - Show the config for the project.");
-console.log("init  - Copy the config file to your project's directory.");
-console.log("build - Build/rebuild the documentation for a Meteor project");
-console.log("start - Start the meteor server for the docs");
+helpers.<span class="apidocCodeKeywordSpan">log</span>("\rmeteor-jsdoc: Automated JSDoc generation for Meteor projects"
+;);
+helpers.log("-------------------------------------------------------------\n");
+
+var action = process.argv[2];
+
+var invalidAction = function(action) {
+helpers.error(`Invalid action: ${action}`);
+helpers.printHelp();
 ...</pre></li>
     </ul>
 
@@ -810,17 +827,21 @@ console.log("start - Start the meteor server for the docs");
   console.log("stop  - Stop the meteor server for the docs\n");
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
-        }
-      };
-    }
+helpers.log("\rmeteor-jsdoc: Automated JSDoc generation for Meteor projects");
+helpers.log("-------------------------------------------------------------\n");
 
-    return jsdocJson;
-  } else {
-    helpers.error("jsdoc.json file does not exist!");
-    helpers.<span class="apidocCodeKeywordSpan">printHelp</span>();
-    process.exit(1);
-  }
-};
+var action = process.argv[2];
+
+var invalidAction = function(action) {
+helpers.error(`Invalid action: ${action}`);
+helpers.<span class="apidocCodeKeywordSpan">printHelp</span>();
+}
+
+if (action == "init") {
+// Special setup for init
+ActionsRegistry.init();
+} else {
+var cwd             = path.resolve(".");
 ...</pre></li>
     </ul>
 
